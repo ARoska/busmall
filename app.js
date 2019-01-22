@@ -2,7 +2,7 @@
 
 var products = [];
 var randomProducts = [];
-var previousRandomProducts = [];
+var choices = document.getElementById('product-choices');
 
 function Product(name) {
   this.filepath = `img/${name}.jpg`;
@@ -33,7 +33,34 @@ new Product('usb');
 new Product('water-can');
 new Product('wine-glass');
 
+// function showRandomProduct() {
+//   var img = document.createElement('img');
+//   products.innerHTML = '';
+//   random = Math.floor(Math.random() * products.length);
+//   img.src = products[random].filepath;
+//   img.alt = products[random].name;
+//   img.title = products[random].name;
+//   products[random].views++;
+//   choices.appendChild(img);
+    
+// }
+
+// showRandomProduct();
+// showRandomProduct();
+// showRandomProduct();
+
 function getRandomProducts() {
-  randomProducts = [];
-  while {}
+  if(randomProducts.length > 3) {
+    randomProducts.shift();
+    randomProducts.shift();
+    randomProducts.shift();
+  }
+  for(var i = 0; i < 3;){
+    var random = Math.floor(Math.random() * products.length);
+    if(!randomProducts.includes(random)) {
+      randomProducts.push(random);
+      i++;
+    }
+
+  }
 }
