@@ -33,34 +33,32 @@ new Product('usb');
 new Product('water-can');
 new Product('wine-glass');
 
-// function showRandomProduct() {
-//   var img = document.createElement('img');
-//   products.innerHTML = '';
-//   random = Math.floor(Math.random() * products.length);
-//   img.src = products[random].filepath;
-//   img.alt = products[random].name;
-//   img.title = products[random].name;
-//   products[random].views++;
-//   choices.appendChild(img);
-    
-// }
-
-// showRandomProduct();
-// showRandomProduct();
-// showRandomProduct();
+function showRandomProduct() {
+  var img;
+  products.innerHTML = '';
+  for(var i = 0; i < 3; i++) {
+    img = document.createElement('img');
+    img.src = products[randomProducts[i]].filepath;
+    img.alt = products[randomProducts[i]].name;
+    img.title = products[randomProducts[i]].name;
+    products[randomProducts[i]].views++;
+    choices.appendChild(img);
+    console.log(randomProducts[i]);
+  }    
+}
 
 function getRandomProducts() {
-  if(randomProducts.length > 3) {
-    randomProducts.shift();
-    randomProducts.shift();
-    randomProducts.shift();
-  }
   for(var i = 0; i < 3;){
+    if(randomProducts.length > 5) {
+      randomProducts.pop();
+    }  
     var random = Math.floor(Math.random() * products.length);
     if(!randomProducts.includes(random)) {
-      randomProducts.push(random);
+      randomProducts.unshift(random);
       i++;
     }
-
   }
 }
+
+getRandomProducts();
+showRandomProduct();
