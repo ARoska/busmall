@@ -3,6 +3,7 @@
 var products = [];
 var randomProducts = [];
 var choices = document.getElementById('product-choices');
+var totalClicks = 0;
 
 function Product(name) {
   this.filepath = `img/${name}.jpg`;
@@ -33,9 +34,9 @@ new Product('usb');
 new Product('water-can');
 new Product('wine-glass');
 
-function showRandomProduct() {
+function showRandomProducts() {
   var img;
-  products.innerHTML = '';
+  choices.innerHTML = '';
   for(var i = 0; i < 3; i++) {
     img = document.createElement('img');
     img.src = products[randomProducts[i]].filepath;
@@ -43,7 +44,6 @@ function showRandomProduct() {
     img.title = products[randomProducts[i]].name;
     products[randomProducts[i]].views++;
     choices.appendChild(img);
-    console.log(randomProducts[i]);
   }    
 }
 
@@ -60,5 +60,24 @@ function getRandomProducts() {
   }
 }
 
+function handleClick(event) {
+  for(var i = 0; i < products.length; i++)
+  if (event.target.alt === products[i].name) {
+    products[i].clicks++;
+    totalClicks++;
+    getRandomProducts();
+    showRandomProducts();
+  }
+  if(event.target.alt === undefined) {
+    return alert('Please click on an image');
+  }
+  if(totalClicks === 25) {
+    choices.removeEventListener('click', handleClick);
+  }
+}
+
+choices.addEventListener('click', handleClick);
+
+
 getRandomProducts();
-showRandomProduct();
+showRandomProducts();
