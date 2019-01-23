@@ -1,0 +1,87 @@
+/* --------------------------- */
+/* HEADER */
+/* --------------------------- */
+
+header {
+  height: 90px;
+  background-color: #7C313C;
+
+}
+
+header h1 {
+  border: 2px solid black;
+  border-radius: 25px;
+  background-color: #5CD0A7;
+  font-size: 32pt;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  text-align: center;
+  margin: auto;
+  width: 500px;
+
+}
+
+/* --------------------------- */
+/* BODY */
+/* --------------------------- */
+
+body {
+  background-color: #F9F7D8;
+
+}
+
+body p {
+  border: 1px solid black;
+  border-radius: 10px;
+  background-color: #5CD0A7;
+  margin: 25px auto;
+  padding: 10px 5px;
+  width: 900px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  text-align: center;
+
+}
+
+body section {
+  border: 3px solid black;
+  border-radius: 25px;
+  background-color: #5CD0A7;
+
+}
+
+body section h2 {
+  font-size: 24pt;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 20px;
+  padding-top: 10px; 
+
+}
+
+body div {
+  border: 1px solid black;
+  background-color: #424D4D;
+  height: 400px;
+
+}
+
+body div img {
+  width: 300px;
+  height: auto;
+  margin-top: 25px;
+  margin-left: 100px;
+  float: left;
+
+}
+
+body ul {
+  margin: 15px auto;
+  list-style-type: square;
+  list-style-position: outside;
+  text-align: center;
+
+}
+
+body li {
+  margin-top: 5px;
+  
+}
