@@ -70,4 +70,18 @@ body div img {
   margin-top: 25px;
   margin-left: 100px;
   float: left;
+
+}
+
+body ul {
+  margin: 15px auto;
+  list-style-type: square;
+  list-style-position: outside;
+  text-align: center;
+
+}
+
+body li {
+  margin-top: 5px;
+  
 }

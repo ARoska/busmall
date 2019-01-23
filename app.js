@@ -2,8 +2,9 @@
 
 var products = [];
 var randomProducts = [];
-var choices = document.getElementById('product-choices');
 var totalClicks = 0;
+var choices = document.getElementById('product-choices');
+var results = document.getElementById('results');
 
 function Product(name) {
   this.filepath = `img/${name}.jpg`;
@@ -34,6 +35,18 @@ new Product('usb');
 new Product('water-can');
 new Product('wine-glass');
 
+function getRandomProducts() {
+  for(var i = 0; i < 3;){
+    if(randomProducts.length > 5) {
+      randomProducts.pop();
+    }  
+    var random = Math.floor(Math.random() * products.length);
+    if(!randomProducts.includes(random)) {
+      randomProducts.unshift(random);
+      i++;
+    }
+  }
+}
 function showRandomProducts() {
   var img;
   choices.innerHTML = '';
@@ -47,16 +60,14 @@ function showRandomProducts() {
   }    
 }
 
-function getRandomProducts() {
-  for(var i = 0; i < 3;){
-    if(randomProducts.length > 5) {
-      randomProducts.pop();
-    }  
-    var random = Math.floor(Math.random() * products.length);
-    if(!randomProducts.includes(random)) {
-      randomProducts.unshift(random);
-      i++;
-    }
+
+function printResults() {
+  var li;
+  results.textContent = "Results:";
+  for(var i = 0; i < products.length; i++) {
+    li = document.createElement('li');
+    li.textContent = `${products[i].clicks} votes for ${products[i].name}`;
+    results.appendChild(li);
   }
 }
 
@@ -73,6 +84,7 @@ function handleClick(event) {
   }
   if(totalClicks === 25) {
     choices.removeEventListener('click', handleClick);
+    printResults();
   }
 }
 
