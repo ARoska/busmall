@@ -12,15 +12,15 @@
       <h1>Welcome to the BusMall Product Research Poject!</h1>
     </header>
 
-    <p>Thank you for participating in this project.  BusMall would like your help to determine which products will be most marketable in the Puget Sound region.  Below you will find three(3) images.  Simply click on the one that you would be most likely to consider purchasing.  Every time you make a choice you will see a new set of three(3) choices, until you have made 25 choices.  After you have made 25 choices you will be shown the results of your choices added together with all other participants in this trial so far.<br><br>We appriciate your help!</p>
+    <p id="text" class="none">Thank you for participating in this project.  BusMall would like your help to determine which products will be most marketable in the Puget Sound region.  Below you will find three(3) images.  Simply click on the one that you would be most likely to consider purchasing.  Every time you make a choice you will see a new set of three(3) choices, until you have made 25 choices.  After you have made 25 choices you will be shown the results of your choices added together with all other participants in this trial so far.<br><br>We appriciate your help!</p>
 
     <section>
-      <h2>Please select one of the options below:</h2>
+      <h2 id="header">Please select one of the options below:</h2>
 
-      <div id="product-choices"></div>
+      <div id="product-choices" class="none"></div>
     </section>
 
-    <canvas id="results" width="800px" height="400px"></canvas>
+    <canvas hidden id="results" width="800px" height="400px"></canvas>
 
     <ul id="results-list"></ul>
 

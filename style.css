@@ -53,24 +53,32 @@ body section h2 {
   font-weight: bold;
   text-align: center;
   margin-bottom: 20px;
-  padding-top: 10px; 
+  padding-top: 13px; 
 
 }
 
 body div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   border: 1px solid black;
   background-color: #424D4D;
-  height: 350px;
+  height: 250px;
+  width: auto;
+  padding: 15px;
+  border-bottom-left-radius: 23px;
+  border-bottom-right-radius: 23px;
 
 }
 
 body div img {
-  width: 200px;
+  display: inline-block;
+  max-width: 200px;
+  max-height: 200px;
+  width: auto;
   height: auto;
-  margin-top: 25px;
-  margin-left: 200px;
-  float: left;
-
+  padding: 10px 50px;
+  
 }
 
 body ul {
@@ -83,5 +91,10 @@ body ul {
 
 body li {
   margin-top: 5px;
+
+}
+
+.hidden {
+  display: none;
 
 }
