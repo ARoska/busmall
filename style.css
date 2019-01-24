@@ -66,6 +66,8 @@ body div {
   height: 250px;
   width: auto;
   padding: 15px;
+  border-bottom-left-radius: 23px;
+  border-bottom-right-radius: 23px;
 
 }
 
@@ -94,5 +96,5 @@ body li {
 
 .hidden {
   display: none;
-  
+
 }

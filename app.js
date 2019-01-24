@@ -109,8 +109,8 @@ function handleClick(event) {
       if(totalClicks > 24 ) {
         totalClicks = 0;
         choices.removeEventListener('click', handleClick);
-        text.class = 'hidden';
-        choices.class = 'hidden';
+        text.className = 'hidden';
+        choices.className = 'hidden';
         chart.hidden = false;
         document.getElementById('header').textContent = 'The results are in!';
         addLocalStorage();
