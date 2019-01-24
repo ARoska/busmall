@@ -3,6 +3,7 @@
 var resultsChart;
 var choices = document.getElementById('product-choices');
 var results = document.getElementById('results-list');
+var imageNames = ['bag', 'banana', 'bathroom', 'boots', 'breakfast', 'bubblegum', 'chair', 'cthulhu', 'dog-duck', 'dragon', 'pen', 'pet-sweep', 'scissors', 'shark', 'sweep', 'tauntaun', 'unicorn', 'usb', 'water-can', 'wine-glass'];
 var allProducts = [];
 var randomProducts = [];
 var totalClicks = 0;
@@ -18,26 +19,16 @@ function Product(name) {
   allProducts.push(this);
 }
 
-new Product('bag');
-new Product('banana');
-new Product('bathroom');
-new Product('boots');
-new Product('breakfast');
-new Product('bubblegum');
-new Product('chair');
-new Product('cthulhu');
-new Product('dog-duck');
-new Product('dragon');
-new Product('pen');
-new Product('pet-sweep');
-new Product('scissors');
-new Product('shark');
-new Product('sweep');
-new Product('tauntaun');
-new Product('unicorn');
-new Product('usb');
-new Product('water-can');
-new Product('wine-glass');
+if(localStorage.busmall) {
+  var retrievedBusmall = localStorage.busmall;
+  retrievedBusmall = JSON.parse(retrievedBusmall);
+  allProducts = retrievedBusmall;
+} else {
+  for(var i = 0; i < imageNames.length; i++) {
+  new Product(imageNames[i]);
+  }
+}
+
 
 function getRandomProducts() {
   for(var i = 0; i < 3;){
@@ -95,6 +86,7 @@ function handleClick(event) {
         updateChartArrays();
         printResults();
         drawChart();
+        localStorage.busmall = JSON.stringify(allProducts);
         return;
       }
   
